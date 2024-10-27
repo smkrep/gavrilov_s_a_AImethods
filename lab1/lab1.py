@@ -71,7 +71,7 @@ def display_text():
     deepl_box.insert(tk.END, ans_deepl)  
 
 root = tk.Tk()
-root.title("Lab1 (translation comparison)")
+root.title("Лабораторная работа 1 (сравнение переводов)")
 root.geometry("800x600")
 
 input_label = tk.Label(root, text="Input")
@@ -79,7 +79,7 @@ input_label.pack(pady=5)
 input_box = scrolledtext.ScrolledText(root, width=70, height=5)
 input_box.pack(pady=10)  
 
-button = tk.Button(root, text="Run test", command=display_text)
+button = tk.Button(root, text="Перевести", command=display_text)
 button.pack(pady=5)
 
 google_label = tk.Label(root, text="Google Translate")

@@ -6,8 +6,8 @@ from dotenv import load_dotenv
 import os
 
 #Сидирование генератора случайных чисел
-np.random.seed(os.getenv['GENERATOR_SEED'])
-torch.manual_seed(os.getenv['GENERATOR_SEED'])
+np.random.seed(1337)
+torch.manual_seed(1337)
 
 #Функция, осуществляющая генерацию текста при помощи модели RuGPT3small
 #Параметры:

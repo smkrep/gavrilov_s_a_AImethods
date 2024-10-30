@@ -2,10 +2,12 @@ import numpy as np
 import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 from typing import List
+from dotenv import load_dotenv
+import os
 
 #Сидирование генератора случайных чисел
-np.random.seed(42)
-torch.manual_seed(42)
+np.random.seed(os.getenv['GENERATOR_SEED'])
+torch.manual_seed(os.getenv['GENERATOR_SEED'])
 
 #Функция, осуществляющая генерацию текста при помощи модели RuGPT3small
 #Параметры:
@@ -23,7 +25,7 @@ def generate_text(prompt: str, max_len: int, temp: float, topk: int, topp: float
                 options: int, no_repeat: int, sampling_flag: bool) -> List[str]:
     
     #Инициализация модели
-    model_name_or_path = "sberbank-ai/rugpt3small_based_on_gpt2"
+    model_name_or_path = os.getenv['MODEL_NAME']
     tokenizer = GPT2Tokenizer.from_pretrained(model_name_or_path)
     model = GPT2LMHeadModel.from_pretrained(model_name_or_path)
 

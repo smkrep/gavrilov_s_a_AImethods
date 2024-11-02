@@ -2,8 +2,6 @@ import numpy as np
 import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 from typing import List
-from dotenv import load_dotenv
-import os
 
 #Сидирование генератора случайных чисел
 np.random.seed(1337)
@@ -21,11 +19,11 @@ torch.manual_seed(1337)
 #sampling_flag - флаг, несущий информацию о необходимости семплирования
 #Возвращаемое значение:
 #Функция возвращает список сгенерированных текстов. Размер списка равен options
-def generate_text(prompt: str, max_len: int, temp: float, topk: int, topp: float,
+def generate_text(model_type: str, prompt: str, max_len: int, temp: float, topk: int, topp: float,
                 options: int, no_repeat: int, sampling_flag: bool) -> List[str]:
     
     #Инициализация модели
-    model_name_or_path = os.getenv['MODEL_NAME']
+    model_name_or_path = model_type
     tokenizer = GPT2Tokenizer.from_pretrained(model_name_or_path)
     model = GPT2LMHeadModel.from_pretrained(model_name_or_path)
 

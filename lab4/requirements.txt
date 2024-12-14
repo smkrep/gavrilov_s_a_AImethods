@@ -1,0 +1,7 @@
+transformers
+aiogram
+python-dotenv
+accelerate
+bitsandbytes
+optimum
+numpy

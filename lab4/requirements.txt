@@ -1,7 +1,3 @@
-transformers
 aiogram
+aiohttp
 python-dotenv
-accelerate
-bitsandbytes
-optimum
-numpy

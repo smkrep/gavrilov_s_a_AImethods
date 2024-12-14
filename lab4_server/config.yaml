@@ -1,0 +1,7 @@
+max_length: 150
+temperature: 1.2
+top_k: 5
+top_p: 0.95
+num_options: 1
+no_repeat_ngram: 2
+do_sample: True
